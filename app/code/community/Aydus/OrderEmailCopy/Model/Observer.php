@@ -64,11 +64,19 @@ class Aydus_OrderEmailCopy_Model_Observer
             $mailer->setSender(Mage::getStoreConfig($order::XML_PATH_EMAIL_IDENTITY, $storeId));
             $mailer->setStoreId($storeId);
             $mailer->setTemplateId($templateId);
-            $mailer->setTemplateParams(array(
+            
+            $templateParamsObj = new Varien_Object();
+            $templateParamsObj->setData(array(
                     'order'        => $order,
                     'billing'      => $order->getBillingAddress(),
                     'payment_html' => $paymentBlockHtml
             ));
+            
+            //additional template params
+            Mage::dispatchEvent('aydus_orderemailcopy_copyneworderemail', array('template_params' => $templateParamsObj));
+            
+            $templateParams = $templateParamsObj->getData();
+            $mailer->setTemplateParams($templateParams);
             
             /** @var $emailQueue Mage_Core_Model_Email_Queue */
             $emailQueue = Mage::getModel('core/email_queue');
@@ -82,6 +90,20 @@ class Aydus_OrderEmailCopy_Model_Observer
         
         return $observer;
         
+    }
+    
+    /**
+     * Observer for this listener
+     * 
+     * @see aydus_orderemailcopy_copyneworderemail
+     * @param Varien_Event_Observer $observer
+     */
+    public function copyNewOrderEmailObserver($observer)
+    {
+        $templateParamsObj = $observer->getTemplateParams();
+        $templateParamsObj->setTest('Hello');
+        
+        return $observer;
     }
 
 }
