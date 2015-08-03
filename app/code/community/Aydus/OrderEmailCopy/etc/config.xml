@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Aydus_AutoCompleteRecommendations module config
+ *
+ * @category   Aydus
+ * @package    Aydus_OrderEmailCopy
+ * @author     Aydus <davidt@aydus.com>
+ */
+-->
+<config>
+    <modules>
+        <Aydus_OrderEmailCopy>
+            <version>0.9.0</version>
+        </Aydus_OrderEmailCopy>
+    </modules>
+    <phpunit>
+        <suite>
+            <modules>
+                <Aydus_OrderEmailCopy />
+            </modules>
+        </suite>
+    </phpunit>
+    <frontend>
+    	<events>
+    		<checkout_type_onepage_save_order_after>
+                <observers>
+                    <aydus_orderemailcopy>
+                        <class>aydus_orderemailcopy/observer</class>
+                        <method>copyNewOrderEmail</method>
+                    </aydus_orderemailcopy>
+                </observers>
+    		</checkout_type_onepage_save_order_after>
+    	</events>
+    </frontend>
+    <global>
+        <helpers>
+            <aydus_orderemailcopy>
+                <class>Aydus_OrderEmailCopy_Helper</class>
+            </aydus_orderemailcopy>
+            <orderemailcopy>
+                <class>Aydus_OrderEmailCopy_Helper</class>
+            </orderemailcopy>
+        </helpers>
+        <models>
+            <aydus_orderemailcopy>
+                <class>Aydus_OrderEmailCopy_Model</class>
+            </aydus_orderemailcopy>
+        </models>
+    </global> 
+    <default>
+    	<catalog>
+    		<aydus_orderemailcopy>
+	    		<enabled>1</enabled>
+    		</aydus_orderemailcopy>
+    	</catalog>
+    </default> 
+</config>

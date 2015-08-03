@@ -1,0 +1,18 @@
+{
+    "name": "aydus/orderemailcopy",
+    "license": "GPL-3.0",
+    "type": "magento-module",
+    "description": "Specify an alternate email template to cc new order emails to.",
+    "homepage": "https://github.com/aydus/OrderEmailCopy.git",
+    "require": {
+        "php": ">=5.3",
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "authors": [
+        {
+            "name": "David Tay",
+            "email": "davidt@aydus.com",
+            "role": "Author/Maintainer"
+        }
+    ]
+}
