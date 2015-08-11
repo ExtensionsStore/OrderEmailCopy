@@ -12,6 +12,24 @@
     <sections>
         <sales_email>
             <groups>
+            	<aydus_orderemailcopy translate="label" module="aydus_orderemailcopy">
+                    <label>Order Email Copy</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <version translate="label">
+                            <label>Version</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>   
+                    </fields>                	
+            	</aydus_orderemailcopy>
             	<order>
                     <fields>
                         <copy_template translate="label comment" module="orderemailcopy">

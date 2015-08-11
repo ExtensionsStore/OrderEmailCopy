@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * OrderEmailCopy Acl
+ * 
+ * @category   Aydus
+ * @package    Aydus_OrderEmailCopy
+ * @author     Aydus <davidt@aydus.com>
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <aydus_disableemailsend translate="title" module="aydus_orderemailcopy">
+                                        <title>Order Email Copy Extension</title>
+                                    </aydus_disableemailsend>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
