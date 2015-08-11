@@ -57,11 +57,10 @@
         </models>
     </global> 
     <default>
-    	<catalog>
+    	<sales_email>
     		<aydus_orderemailcopy>
     			<version>0.9.0</version>
-	    		<enabled>1</enabled>
     		</aydus_orderemailcopy>
-    	</catalog>
+    	</sales_email>
     </default> 
 </config>
