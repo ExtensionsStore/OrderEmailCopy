@@ -59,6 +59,7 @@
     <default>
     	<catalog>
     		<aydus_orderemailcopy>
+    			<version>0.9.0</version>
 	    		<enabled>1</enabled>
     		</aydus_orderemailcopy>
     	</catalog>
